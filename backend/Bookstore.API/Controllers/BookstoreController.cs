@@ -28,8 +28,8 @@ namespace Bookstore.API.Controllers
 
             return Ok(new
             {
-                Books = page,
-                TotalNumBooks = totalNumBooks
+                books = page,
+                totalNumBooks = totalNumBooks
             });
         }
 
