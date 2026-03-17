@@ -12,9 +12,25 @@ namespace Bookstore.API.Controllers
         public BookstoreController(BookDbContext temp) => _bookcontext = temp;
 
         [HttpGet("AllBooks")]
-        public IEnumerable<Book> GetBooks()
+        public IActionResult GetBooks([FromQuery] int PageSize = 10, [FromQuery] int PageNumber = 1)
         {
-            return _bookcontext.Books.ToList();
+            if (PageSize <= 0 || PageNumber <= 0)
+            {
+                return BadRequest("PageSize and PageNumber must be greater than 0");
+            }
+
+            var page = _bookcontext.Books
+                .Skip((PageNumber - 1) * PageSize)
+                .Take(PageSize)
+                .ToList();
+
+            var totalNumBooks = _bookcontext.Books.Count();
+
+            return Ok(new
+            {
+                Books = page,
+                TotalNumBooks = totalNumBooks
+            });
         }
 
         [HttpGet("FictionalBooks")]
