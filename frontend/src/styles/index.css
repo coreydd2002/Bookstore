@@ -1,4 +1,4 @@
-/* Full-viewport shell: one scroll region is delegated to main (see App.css). */
+/* Global viewport shell: one scroll region is delegated to main (BooksPage layout). */
 html {
   height: 100%;
 }
