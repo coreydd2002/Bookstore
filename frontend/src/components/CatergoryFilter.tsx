@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../styles/CatergoryFilter.css';
+import { fetchBookCategories } from '../../api/BooksAPI';
 
 function CategoryFilter({
   selectedCategories,
@@ -13,10 +14,7 @@ function CategoryFilter({
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch(
-          'https://localhost:5000/Bookstore/BookCategories',
-        );
-        const data = await response.json();
+        const data = await fetchBookCategories();
         setCategories(data);
       } catch (error) {
         console.error('Error fetching categories:', error);

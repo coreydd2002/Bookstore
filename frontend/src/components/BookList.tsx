@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { Book } from '../types/Book';
 import '../styles/BookList.css';
+import { fetchBooks } from '../../api/BooksAPI';
 
 type BookListProps = {
   selectedCategories: string[];
@@ -9,28 +10,6 @@ type BookListProps = {
   pagesize: number;
   onTotalPages: (totalPages: number) => void;
 };
-
-type RawBook = Partial<Book> & {
-  bookID?: number;
-  id?: number;
-  quantity?: number;
-  inventory?: number;
-};
-
-function normalizeBook(raw: RawBook): Book {
-  return {
-    bookId: raw.bookId ?? raw.bookID ?? raw.id ?? 0,
-    title: raw.title ?? '',
-    author: raw.author ?? '',
-    publisher: raw.publisher ?? '',
-    isbn: raw.isbn ?? '',
-    classification: raw.classification ?? '',
-    category: raw.category ?? '',
-    pageCount: raw.pageCount ?? 0,
-    price: raw.price ?? 0,
-    quantity: raw.quantity ?? raw.inventory ?? 1,
-  };
-}
 
 function BookList({
   selectedCategories,
@@ -40,28 +19,42 @@ function BookList({
 }: BookListProps) {
   const [books, setBooks] = useState<Book[]>([]);
   const navigate = useNavigate();
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchBooks = async () => {
-      const categoryParams = selectedCategories
-        .map((c) => `bookTypes=${encodeURIComponent(c)}`)
-        .join('&');
-
-      const response = await fetch(
-        `https://localhost:5000/Bookstore/AllBooks?PageSize=${pagesize}&PageNumber=${pageNumber}${selectedCategories.length > 0 ? `&${categoryParams}` : ''}`,
-      );
-      const data = await response.json();
-      const normalizedBooks: Book[] = (data.books ?? []).map((raw: RawBook) =>
-        normalizeBook(raw),
-      );
-      setBooks(normalizedBooks);
-      const computedTotalPages =
-        data.totalNumBooks > 0 ? Math.ceil(data.totalNumBooks / pagesize) : 1;
-      onTotalPages(computedTotalPages);
+    const loadBooks = async () => {
+      try {
+          setLoading(true);
+          setError(null);
+        const data = await fetchBooks(pageNumber, pagesize, selectedCategories);
+        setBooks(data.books ?? []);
+        const computedTotalPages =
+          data.totalNumBooks > 0 ? Math.ceil(data.totalNumBooks / pagesize) : 1;
+        onTotalPages(computedTotalPages);
+      } catch (error) {
+        setError((error as Error).message);
+      } finally {
+        setLoading(false);
+      }
     };
-
-    fetchBooks();
+    loadBooks();
   }, [pagesize, pageNumber, selectedCategories, onTotalPages]);
+
+  if (loading) {
+    return (
+      <div className="text-center text-body-secondary py-5">
+        <p className="mb-0">Loading books...</p>
+      </div>
+    );
+  }
+  if (error) {
+    return (
+      <div className="text-center text-danger py-5">
+        <p className="mb-0">Error: {error}</p>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -71,9 +64,9 @@ function BookList({
             <p className="mb-0">No books found for this page.</p>
           </div>
         ) : (
-          books.map((b) => {
+          books.map((b, index) => {
             return (
-              <div className="col-12 col-md-6 col-xl-4" key={b.bookId}>
+              <div className="col-12 col-md-6 col-xl-4" key={b.bookId || index}>
                 <div className="card h-100 shadow-sm border-secondary book-card">
                   <div className="card-body d-flex flex-column">
                     <h2 className="card-title h5 text-center fw-bold mb-3">{b.title}</h2>

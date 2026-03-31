@@ -6,6 +6,7 @@ import BooksPage from './pages/BooksPage';
 import CartPage from './pages/CartPage';
 import Footer from './shared/Footer';
 import Header from './shared/Header';
+import AdminBooksPage from './pages/AdminBooksPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <Route path="/" element={<BooksPage />} />
               <Route path="/addToCart" element={<AddToCart />} />
               <Route path="/cart" element={<CartPage />} />
+              <Route path="/adminBooks" element={<AdminBooksPage />} />
             </Routes>
           </main>
           <Footer />
