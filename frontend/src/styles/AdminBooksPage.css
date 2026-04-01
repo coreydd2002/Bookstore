@@ -1,0 +1,13 @@
+.admin-books-page .admin-books-table {
+  border-color: #1e3a5f;
+}
+
+.admin-books-page .admin-books-table th {
+  white-space: nowrap;
+  background-color: #1e3a8a;
+}
+
+.admin-books-page .admin-books-table td,
+.admin-books-page .admin-books-table th {
+  vertical-align: middle;
+}

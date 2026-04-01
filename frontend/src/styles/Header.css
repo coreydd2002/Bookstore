@@ -1,0 +1,16 @@
+.books-header {
+  background-color: #1e3a8a;
+  color: #ffffff;
+}
+
+.books-header__nav-btn {
+  background-color: #e5e7eb;
+  color: #1e3a8a;
+  border-color: #e5e7eb;
+}
+
+.books-header__nav-btn:hover {
+  background-color: #d6dae0;
+  color: #1e3a8a;
+  border-color: #d6dae0;
+}
