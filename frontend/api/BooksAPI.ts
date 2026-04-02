@@ -5,7 +5,7 @@ interface FetchBooksResponse {
   totalNumBooks: number;
 }
 
-const API_BASE = '/Bookstore';
+const API_BASE = 'https://bookstore-corey-backend-dpbvdrevfyb2ffgb.francecentral-01.azurewebsites.net/Bookstore';
 
 type RawBook = Partial<Book> & {
   bookID?: number;

@@ -1,6 +1,7 @@
 C:\Users\corey\BYU\2026_Winter\IS413\Bookstore\backend\Bookstore.API\publish\Bookstore.API.exe
 C:\Users\corey\BYU\2026_Winter\IS413\Bookstore\backend\Bookstore.API\publish\appsettings.Development.json
 C:\Users\corey\BYU\2026_Winter\IS413\Bookstore\backend\Bookstore.API\publish\appsettings.json
+C:\Users\corey\BYU\2026_Winter\IS413\Bookstore\backend\Bookstore.API\publish\Bookstore.sqlite
 C:\Users\corey\BYU\2026_Winter\IS413\Bookstore\backend\Bookstore.API\publish\Bookstore.API.dll
 C:\Users\corey\BYU\2026_Winter\IS413\Bookstore\backend\Bookstore.API\publish\Bookstore.API.runtimeconfig.json
 C:\Users\corey\BYU\2026_Winter\IS413\Bookstore\backend\Bookstore.API\publish\Bookstore.API.pdb
