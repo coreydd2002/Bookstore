@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\corey\\BYU\\2026_Winter\\IS413\\Bookstore\\backend\\Bookstore.API\\Bookstore.API.csproj": {}
+    "C:\\Users\\corey\\BYU\\2026_Winter\\IS413\\Bookstore\\Backend\\Bookstore.API\\Bookstore.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\corey\\BYU\\2026_Winter\\IS413\\Bookstore\\backend\\Bookstore.API\\Bookstore.API.csproj": {
+    "C:\\Users\\corey\\BYU\\2026_Winter\\IS413\\Bookstore\\Backend\\Bookstore.API\\Bookstore.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\corey\\BYU\\2026_Winter\\IS413\\Bookstore\\backend\\Bookstore.API\\Bookstore.API.csproj",
+        "projectUniqueName": "C:\\Users\\corey\\BYU\\2026_Winter\\IS413\\Bookstore\\Backend\\Bookstore.API\\Bookstore.API.csproj",
         "projectName": "Bookstore.API",
-        "projectPath": "C:\\Users\\corey\\BYU\\2026_Winter\\IS413\\Bookstore\\backend\\Bookstore.API\\Bookstore.API.csproj",
+        "projectPath": "C:\\Users\\corey\\BYU\\2026_Winter\\IS413\\Bookstore\\Backend\\Bookstore.API\\Bookstore.API.csproj",
         "packagesPath": "C:\\Users\\corey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\corey\\BYU\\2026_Winter\\IS413\\Bookstore\\backend\\Bookstore.API\\obj\\",
+        "outputPath": "C:\\Users\\corey\\BYU\\2026_Winter\\IS413\\Bookstore\\Backend\\Bookstore.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

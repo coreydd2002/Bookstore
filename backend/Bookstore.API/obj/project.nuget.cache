@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n9uGegAac/c=",
+  "dgSpecHash": "F2btQbc6ngE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\corey\\BYU\\2026_Winter\\IS413\\Bookstore\\backend\\Bookstore.API\\Bookstore.API.csproj",
+  "projectFilePath": "C:\\Users\\corey\\BYU\\2026_Winter\\IS413\\Bookstore\\Backend\\Bookstore.API\\Bookstore.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\corey\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\corey\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.5\\microsoft.aspnetcore.openapi.10.0.5.nupkg.sha512",
